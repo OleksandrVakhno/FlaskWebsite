@@ -1,0 +1,17 @@
+{%extends "layout.html"%}
+{%block content%}
+<link rel="stylesheet" href={{cdn_css | safe}} type="text/css" />
+<script type="text/javascript" src={{cdn_js | safe}} ></script>
+<h1>
+    Finance Graph of AAPL
+</h1>
+<br>
+<form method="POST" action="/finance_graph">
+    Input graph start date:<br>
+    {{request_str | safe}}
+    <input type="date" name="date">
+    <input type="submit">
+</form>
+{{script1 | safe}}
+{{div1 | safe}}
+{%endblock%}
