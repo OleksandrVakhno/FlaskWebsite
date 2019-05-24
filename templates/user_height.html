@@ -1,0 +1,21 @@
+{%extends"layout.html"%}
+{%block content%}
+<div class="container" style="background-color:lightblue; text-align: center; border-radius: 25px;">
+    <h1>Average User Heigth Calculator</h1>
+    <p style="color: yellow;">
+            {{warning | safe}}
+    </p>
+    <p>Please input your parameters to see the statistic:</p>
+    <form method="POST" action={{url_for('user_height')}}>
+        <input placeholder="Enter your email" type="email" name="email" required><br>
+        <input placeholder="Enter your height" type="number" name="height" required><br>
+        <input type="submit">
+    </form>
+    <p>
+        {{count | safe}}
+    </p>
+    <p>
+        {{average | safe}}
+    </p>
+</div>
+{%endblock%}

@@ -6,7 +6,7 @@
     Finance Graph of AAPL
 </h1>
 <br>
-<form method="POST" action="/finance_graph">
+<form method="POST" action={{url_for('finance_graph')}}>
     Input graph start date:<br>
     {{request_str | safe}}
     <input type="date" name="date">
