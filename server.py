@@ -89,8 +89,8 @@ def user_height():
 
         average = round(db.session.query(func.avg(Data._height)).scalar(),1)
         count = db.session.query(Data._height).count()
-        #send_email(email,height, average, count)
-        return render_template('user_height.html', average=average, count = count, warning = warning)
+        send_email(email,height, average, count)
+        return render_template('user_height.html', warning = warning)
     else:
         return render_template('user_height.html')
 
